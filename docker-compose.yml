@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  publisher:
+    build:
+      context: .
+    image: zmqpythontest:0.1
+    container_name: zmq_pub
+    command: ["python","-u", "./publisher.py"]
+  subscriber:
+    build:
+      context: .
+    image: zmqpythontest:0.1
+    container_name: zmq_sub
+    command: ["python", "-u", "./subscriber.py"]
