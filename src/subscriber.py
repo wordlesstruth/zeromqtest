@@ -7,7 +7,7 @@ if __name__ == "__main__":
     context = zmq.Context()
     zsocket = context.socket(zmq.SUB)
     zsocket.setsockopt(zmq.SUBSCRIBE, b"")
-    zsocket.connect("tcp://{0}:{1}".format(socket.gethostbyname('publisher'), port))
+    zsocket.connect("tcp://{0}:{1}".format('publisher', port))
     print("Starting receive loop")
     while True:
         msg = zsocket.recv()
